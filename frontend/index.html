@@ -9,10 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Recigems</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body id="backdrop-rotator">
+    <nav class="navi">
+        <div style="padding: 5px; width: 5%; float: left;">
+            <img id="logo" src="../images/logo.png">
+        </div>
+        <div id = "mainLinks">
+            <a href="#settings">Settings</a>  
+            <a href="#ranking">Leader Boards</a>
+            <a href="#training">Practice</a>
+            <a href="#ranked">Speed Rounds</a>
+            <a class="active" href="#home">Home</a>
+        </div>
+    </nav>
     <p>Drag and drop the items into correct order.</p>
     <ul class="draggable-list" id="draggable-list"></ul>
     <button class="check-btn" id="check">Check</button>
