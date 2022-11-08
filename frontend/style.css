@@ -2,8 +2,11 @@
 
 :root {
   --border-color: #e3e5e4;
-  --background-color: #c3c7ca;
+  --background-color: #c0783d;
+  --game-accent-color: #c0783d;
+  --highlight-color: #c04c3d;
   --text-color: #34444f;
+  --game-background-color: #026d22;
 }
 
 * {
@@ -82,8 +85,9 @@ body {
 }
 
 .check-btn {
-  background-color: var(--background-color);
-  border: none;
+  background-color: var(--game-accent-color);
+  border: 1px solid transparent;
+  border-radius: .25rem;
   color: var(--text-color);
   font-size: 16px;
   padding: 10px 20px;
@@ -94,8 +98,21 @@ body {
   transform: scale(0.98);
 }
 
+.check-btn:hover,
 .check-btn:focus {
   outline: none;
+  box-shadow: rgba(0, 0, 0, 0.339) 0 4px 4px;
+  background-color: var(--highlight-color);
+}
+
+#practice-prompt-container {
+  padding: 30px;
+  background-color: var(--game-accent-color);
+  border-radius: 10px;
+  border-width: 7px;
+  border-color: #132334;
+  border-style: groove;
+  box-shadow: rgba(0, 0, 0, 0.339) 0 4px 4px;
 }
 
 
@@ -103,13 +120,13 @@ body {
 /* Add a black background color to the top navigation */
 .navi {
   width: 100%;
-  height: 45px;
-  background-color: rgb(144, 100, 4);
+  height: 55px;
+  background-image: linear-gradient(top, rgba(144, 100, 4, 255), rgba(144, 100, 4, 1));
   overflow: hidden;
-  border-width: 5px;
-  border-bottom-width: 5px;
-  border-bottom: #132334;
-  border-bottom-style: solid;
+  background-image: linear-gradient(-45deg, #0a9d079f, #40ff8cc2, #06bd8dd9, #0dc3dbfc,#063c99);
+  box-shadow: 3px 3px 20px #33ff41;
+  border-bottom-right-radius: 0px;
+  padding: 3px;
 }
 
 /* Style the links inside the navigation bar */
@@ -130,11 +147,33 @@ body {
 
 /* Add a color to the active/current link */
 .navi a.active {
-  background-color: #67130b;
+  background-color: #67130bc8;
   color: rgb(14, 55, 83);
 }
 
 #logo {
+  padding-left: 30px;
   float: left;
-  height: 35px;
+  height: 45px;
+}
+
+#mainLinks {
+  text-align: right;
+}
+
+#game-front-container {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 8%;
+  padding-bottom: 6%;
+  border-width: 3%;
+  border-radius: 10%;
+  border-style: groove;
+  background-color: var(--game-background-color);
+}
+
+#menu {
+  list-style-type: none;
+  display: inline-flex;
+  margin: 0px;
 }
