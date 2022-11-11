@@ -1,0 +1,42 @@
+@import url('practice.css');
+
+#start-ranked-btn {
+    background-color: var(--game-accent-color);
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: large;
+    font-family: 'Scholar';
+}
+
+#start-ranked-btn:active {
+    transform: scale(0.98);
+}
+
+#start-ranked-btn:hover,
+#start-ranked-btn:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.339) 0 4px 4px;
+    background-color: var(--highlight-color);
+}
+
+#timer-container {
+    padding-top: 5%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 7%;
+    border-width: 3%;
+    border-radius: 10%;
+    border-style: groove;
+    background-color: var(--ranked-timer-background-color);
+    color: rgb(#000000);
+    text-align: center;
+}
+
+#timer-text {
+    font-size: 300%;
+    font-family: 'Upheaval';
+}
