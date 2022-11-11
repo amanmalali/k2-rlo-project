@@ -11,6 +11,11 @@
 }
 
 @font-face {
+    font-family: PublicPixel;
+    src: url('fonts/public-pixel-font/PublicPixel-z84yD.ttf');
+}
+
+@font-face {
     font-family: Upheaval;
     src: url('fonts/upheaval/upheavtt.ttf');
 }

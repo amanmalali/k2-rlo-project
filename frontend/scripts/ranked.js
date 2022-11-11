@@ -11,14 +11,14 @@ function rankedInit(){
     } else {
         $('#start-ranked-btn').text("End Ranked");
         $('#game-front-container').show();
+        $('#timer-container').show();
         track = true;
-        $('#timer-text').text(time);
+        $('#timer-text').text('00:00s');
     }
 }
 
 function timer() {
     if (track) {
-        time = time.replace('s', '');
         time = time.split(':', 3);
         m = parseInt(time[0]);
         s = parseInt(time[1]);
@@ -28,8 +28,18 @@ function timer() {
         ms = (t % 1000).toString();
         s = (((t - ms) % (60*1000))/1000).toString();
         m = (((t - s*1000 - ms) % (60*60*1000))/(60*1000)).toString();
-        time = m + ':' + s + ':' + ms + 's';
-        $("#timer-text").text(time);
+        for (let i = 0; i < 4 - ms.length; i++) {
+            ms = "0" + ms
+        }
+        for (let i = 0; i < 2 - s.length; i++) {
+            s = "0" + s
+        }
+        for (let i = 0; i < 2 - m.length; i++) {
+            m = "0" + m
+        }
+        time = m + ':' + s + ':' + ms;
+        shown = m + ':' + s + 's'
+        $("#timer-text").text(shown);
     };
 }
 
