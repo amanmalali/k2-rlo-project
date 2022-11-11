@@ -9,7 +9,7 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: large;
-    font-family: 'Scholar';
+    font-family: 'Upheaval';
 }
 
 #start-ranked-btn:active {
@@ -24,10 +24,6 @@
 }
 
 #timer-container {
-    padding-top: 5%;
-    padding-left: 6%;
-    padding-right: 6%;
-    padding-bottom: 7%;
     border-width: 3%;
     border-radius: 10%;
     border-style: groove;
@@ -37,6 +33,7 @@
 }
 
 #timer-text {
+    padding-left: 0.75%;
     font-size: 300%;
-    font-family: 'Upheaval';
+    font-family: PublicPixel;
 }

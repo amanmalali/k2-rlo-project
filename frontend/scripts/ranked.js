@@ -28,6 +28,15 @@ function timer() {
         ms = (t % 1000).toString();
         s = (((t - ms) % (60*1000))/1000).toString();
         m = (((t - s*1000 - ms) % (60*60*1000))/(60*1000)).toString();
+        for (let i = 0; i < 4 - ms.length; i++) {
+            ms = "0" + ms
+        }
+        for (let i = 0; i < 2 - s.length; i++) {
+            s = "0" + s
+        }
+        for (let i = 0; i < 2 - m.length; i++) {
+            m = "0" + m
+        }
         time = m + ':' + s + ':' + ms + 's';
         $("#timer-text").text(time);
     };
