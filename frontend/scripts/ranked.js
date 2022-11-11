@@ -11,14 +11,14 @@ function rankedInit(){
     } else {
         $('#start-ranked-btn').text("End Ranked");
         $('#game-front-container').show();
+        $('#timer-container').show();
         track = true;
-        $('#timer-text').text(time);
+        $('#timer-text').text('00:00s');
     }
 }
 
 function timer() {
     if (track) {
-        time = time.replace('s', '');
         time = time.split(':', 3);
         m = parseInt(time[0]);
         s = parseInt(time[1]);
@@ -37,8 +37,9 @@ function timer() {
         for (let i = 0; i < 2 - m.length; i++) {
             m = "0" + m
         }
-        time = m + ':' + s + ':' + ms + 's';
-        $("#timer-text").text(time);
+        time = m + ':' + s + ':' + ms;
+        shown = m + ':' + s + 's'
+        $("#timer-text").text(shown);
     };
 }
 

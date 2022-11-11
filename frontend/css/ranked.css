@@ -8,7 +8,7 @@
     font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: large;
+    font-size: 30px;
     font-family: 'Upheaval';
 }
 
@@ -27,13 +27,14 @@
     border-width: 3%;
     border-radius: 10%;
     border-style: groove;
-    background-color: var(--ranked-timer-background-color);
-    color: rgb(#000000);
+    background-color: var(--game-background-color);
     text-align: center;
 }
 
 #timer-text {
     padding-left: 0.75%;
-    font-size: 300%;
+    font-size: 200%;
+    color: #00a8c6c7;
+    text-shadow: 3px 3px black;
     font-family: PublicPixel;
 }
