@@ -1,5 +1,7 @@
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type='text/javascript'>
         function addFields(){
             // Generate a dynamic number of inputs
@@ -23,8 +25,26 @@
             }
         }
     </script>
+    <title>Recigems</title>
 </head>
-<body>
+
+<body class="backdrop-rotator">
+    <script src="../static/scripts/background.js"></script>
+    <nav class="navi">
+        <div style="padding-top: 2px; width: 5%; float: left;">
+            <img id="logo" src="../static/images/logo.png">
+        </div>
+        <div id = "mainLinks">
+            <ul id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="ranked.html">Speed Rounds</a></li>
+                <li><a class="active" href="index.html">Practice</a></li>
+                <li><a href="board.html">Leader Boards</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div style="padding-top: 5%;">    </div>
     <input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
     <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
     <div id="container"/>
