@@ -6,11 +6,13 @@ function rankedInit(){
     if (track) {
         $('#start-ranked-btn').text("Start Ranked");
         $('#game-front-container').hide();
+        $('#point-counter-box').hide();
         track = false;
         time = "00:00:000s";
     } else {
         $('#start-ranked-btn').text("End Ranked");
         $('#game-front-container').show();
+        $('#point-counter-box').show();
         $('#timer-container').show();
         track = true;
         $('#timer-text').text('00:00s');

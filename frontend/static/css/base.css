@@ -37,6 +37,7 @@ body {
   justify-content: flex-start;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
   font-family: 'Lato', sans-serif;
   
   background-repeat: no-repeat;
@@ -47,7 +48,14 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
+header{
+  width:100%; 
+}
+footer{
+  width:100%; 
+  bottom:0;
+  position:absolute;
+}
 /* Credits to W3 Schools for template: https://www.w3schools.com/howto/howto_js_topnav.asp */
 /* Add a black background color to the top navigation */
 .navi {
@@ -95,4 +103,20 @@ body {
 list-style-type: none;
 display: inline-flex;
 margin: 0px;
+}
+
+#tutorial-box {
+    border-width: 3%;
+    border-radius: 10%;
+    border-style: groove;
+    background-color: var(--game-background-color);
+    position:fixed;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Upheaval';
+}
+
+#tutorial {
+  font-size: 30px;
+  font-family: 'Upheaval';
 }

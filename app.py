@@ -29,7 +29,7 @@ def index():
 @socketio.on('play_as_teacher')
 def play_as_teacher():
     session["role"] = "teacher"
-    emit('teacher_joined_response', {'data': "teacher has joined"} broadcast=True)
+    emit('teacher_joined_response', {'data': "teacher has joined"}, broadcast=True)
 
 @socketio.on('play_as_student')
 def play_as_student():
