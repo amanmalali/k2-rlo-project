@@ -26,6 +26,12 @@ const recipe = [
     'Heat a pan on medium heat',
     'Wait until pan is hot',
     'Pour two big spoons of Olive oil into the pan',
+    'Pour scrambled eggs and stir until dry and cooked',
+    'Get Eggs and Olive oil',
+    'Scramble the eggs in the bowl',
+    'Heat a pan on medium heat',
+    'Wait until pan is hot',
+    'Pour two big spoons of Olive oil into the pan',
     'Pour scrambled eggs and stir until dry and cooked'
 ];
 
@@ -57,6 +63,7 @@ function createList() {
                 <p style="font-family: 'Scholar';" class='recipe-name'>${recipeName}</p>
                 <i class="fas fa-grip-lines"></i>
             </div>`;
+            listItems.push(listItem);
             listItems.push(listItem);
 
             draggableList.appendChild(listItem);
