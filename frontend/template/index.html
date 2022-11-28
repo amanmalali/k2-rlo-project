@@ -21,27 +21,30 @@
         </div>
         <div id = "mainLinks">
             <ul id="menu">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="ranked.html">Speed Rounds</a></li>
-                <li><a class="active" href="index.html">Practice</a></li>
-                <li><a href="board.html">Leader Boards</a></li>
-                <li><a href="settings.html">Settings</a></li>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./ranked.html">Speed Rounds</a></li>
+                <li><a class="active" href="./index.html">Practice</a></li>
+                <li><a href="./board.html">Leader Boards</a></li>
+                <li><a href="./settings">Settings</a></li>
             </ul>
         </div>
     </nav>
-    <div style="padding-top: 5%;"></div>
+    <!-- <div style="padding-top: 5%;"></div> -->
     <div style="padding: 10px;" id="point-counter-box">    
         <img id="gemPicture" src="../static/images/gems/blue_gem_1.png">
         <p id="point-counter">0</p>  
     </div>
-    <div id = "game-front-container">
-        <div id = "practice-prompt-container">   
-            <p style="font-family: 'Scholar'; font-size: 150%;" id = "practice-prompt">Drag and drop the items into correct order.</p>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; overflow: auto;">
+        <div id = "game-front-container">
+            <div id = "practice-prompt-container">   
+                <p style="font-family: 'Scholar'; font-size: 150%;" id = "practice-prompt">Drag and drop the items into correct order.</p>
+            </div>
+            <ul class="draggable-list" id="game-front"></ul>
+            <button style="font-family: 'Scholar';" class="check-btn" id="check">Check</button>
+            <script src="../static/scripts/script.js"></script>
         </div>
-        <ul class="draggable-list" id="game-front"></ul>
-        <button style="font-family: 'Scholar';" class="check-btn" id="check">Check</button>
-        <script src="../static/scripts/script.js"></script>
     </div>
+   
 </body>
 
 </html>
