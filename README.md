@@ -11,14 +11,14 @@ This project aims to analyze and improve the computational thinking skills of st
 ## Intended learning outcomes (ILOs) for students:
 Students should be able to analyze real world examples and break them down into their constituent steps. They should also be able to apply algorithmic skills to further order these steps sequentially, similar to how they would perform them in the real world.
 ## Structure
- * ![flask_session](https://github.com/amanmalali/k2-rlo-project/tree/main/flask_session)
- * ![frontend](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend)
-  * ![static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static)
- * ![css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css)
- * ![fonts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css/fonts)
- * ![images](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/images)
- * ![scripts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/scripts)
-  * ![template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template)
+ * [flask_session](https://github.com/amanmalali/k2-rlo-project/tree/main/flask_session)
+ * [frontend](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend)
+  * [static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static)
+ * [css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css)
+ * [fonts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css/fonts)
+ * [images](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/images)
+ * [scripts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/scripts)
+  * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template)
 ## Features
  * Core Game Mechanic
  * User login
