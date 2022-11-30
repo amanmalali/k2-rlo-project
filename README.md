@@ -13,12 +13,12 @@ Students should be able to analyze real world examples and break them down into 
 ## Structure
  * [flask_session](https://github.com/amanmalali/k2-rlo-project/tree/main/flask_session)
  * [frontend](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend)
-  ** [static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static)
- * [css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css)
- * [fonts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css/fonts)
- * [images](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/images)
- * [scripts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/scripts)
-  * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template)
+     * [static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static)
+         * [css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css)
+             * [fonts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css/fonts)
+         * [images](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/images)
+         * [scripts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/scripts)
+     * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template)
 ## Features
  * Core Game Mechanic
  * User login
