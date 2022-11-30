@@ -13,12 +13,12 @@ Students should be able to analyze real world examples and break them down into 
 ## Structure
  * [flask_session](https://github.com/amanmalali/k2-rlo-project/tree/main/flask_session)
  * [frontend](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend)
-     * [static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static)
-         * [css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css)
-             * [fonts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css/fonts)
-         * [images](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/images)
-         * [scripts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/scripts)
-     * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template)
+     * [static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static): Stores functions/data not subject to change
+         * [css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css): Stores CSS Template
+             * [fonts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css/fonts): Stores Open Sources Fonts
+         * [images](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/images): Stores DALL-E Images
+         * [scripts](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/scripts): Stores scripts for game, background image and etc... 
+     * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template): Stores web links
 ## Features
  * Core Game Mechanic
  * User login
