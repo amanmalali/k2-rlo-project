@@ -10,6 +10,16 @@ Core Features should include:
 This project aims to analyze and improve the computational thinking skills of students in K2 and beyond, by creating an application to test these skills using the real world example of cooking recipes. It should serve as a fun, useful metric for teachers to gauge a students ability in this particular task.
 ## Intended learning outcomes (ILOs) for students:
 Students should be able to analyze real world examples and break them down into their constituent steps. They should also be able to apply algorithmic skills to further order these steps sequentially, similar to how they would perform them in the real world.
+## Intended Workflow
+ * Phase One
+     * Teacher: Begins activity introduction, helps students begin activity
+     * Student: Find, Login and Begin the game
+ * Phase two
+     * Teacher: Observe analytics, assist students as needed
+     * Student: Students continue to play the game
+ * Phase three
+     * Teacher: Ends activity, allows brainstorming of new recipes and images
+     * Student: Participate in brainstorming
 ## Structure
  * [flask_session](https://github.com/amanmalali/k2-rlo-project/tree/main/flask_session)
  * [frontend](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend)
