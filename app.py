@@ -1,42 +1,60 @@
 from flask import Flask, render_template, session,request
-# from flask_socketio import SocketIO, emit
-# from flask_session import Session
 from uuid import uuid4
 import json
 import random
 random.seed(42)
 app = Flask(__name__, template_folder="./frontend/template", static_folder="./frontend/static")
 app.config['SECRET_KEY'] = 'secret!'
-# socketio = SocketIO(app)
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
 
 app.config['SECRET_KEY'] = uuid4().hex
 
 app.config["SESSION_PERMANENT"] = True
 app.config["SESSION_TYPE"] = "filesystem"
-# Session(app)
+
+url="http://127.0.0.1:5000"
+pwd="."
 
 
-
-# socketio = SocketIO(app)
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/get_recipe')
-def get_recipe():
-    f=open("./recipe.json")
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+@app.route('/get_recipe_random')
+def get_recipe_random():
+    f=open(pwd+"/recipe.json")
     data=json.load(f)
     k=random.randint(0,len(data['recipes'])-1)
-    print(data)
-    print(k) 
     recipes=list(data["recipes"].keys())
     sel_recipe=recipes[k]
     recipe_obj={"name":sel_recipe,"recipe":data["recipes"][sel_recipe]}
     return json.dumps(recipe_obj)
+
+@app.route('/get_recipe_name')
+def get_recipe_name():
+    if request.method=='GET':
+        recipe_name=request.args.get("name")
+        f=open(pwd+"/recipe.json")
+        data=json.load(f)
+        if recipe_name in data["recipes"]:
+            recipe_obj={"name":recipe_name,"recipe":data["recipes"][recipe_name]}
+            return json.dumps(recipe_obj)
+        else:
+            error={"Error":"Recipe not found"}
+            return json.dumps(error)
+
+@app.route('/list_recipes')
+def list_recipes():
+    f=open(pwd+"/recipe.json")
+    data=json.load(f)
+    recipes=list(data["recipes"].keys())
+    list_recipe={"recipes":recipes}
+    return json.dumps(list_recipe)
+
 
 @app.route('/input/', methods=('GET', 'POST'))
 def create():
@@ -50,12 +68,12 @@ def create():
             else:
                 print(l)
                 break
-        f=open("./recipe.json")
+        f=open(pwd+"/recipe.json")
         data=json.load(f)
         f.close()
         if name not in data["recipes"]:
             data["recipes"][name]=l
-            with open("./recipe.json", "w") as outfile:
+            with open(pwd+"/recipe.json", "w") as outfile:
                 json.dump(data, outfile)
             message="Recipe Successfully Added"
         else:
@@ -64,43 +82,9 @@ def create():
         print("MESSAGE",message)
         
         return render_template('input.html',error=str(message))  
-        
-        # title = request.form['member1']
-        # content = request.form['member2']
-        # print(request.form.keys())
-
 
     return render_template('input.html')
 
-
-
-
-# @app.route('/static/script.js')
-# def script():
-#      return render_template('/static/script.js')
-
-# @socketio.on('play_as_teacher')
-# def play_as_teacher():
-#     session["role"] = "teacher"
-#     emit('teacher_joined_response', {'data': "teacher has joined"}, broadcast=True)
-
-# @socketio.on('play_as_student')
-# def play_as_student():
-#     session["role"] = "student"
-#     emit('student_joined_response', {'data': "student has joined"}, broadcast=True)
-
-# @socketio.on('create_recipe')
-# def create_recipe(recipe):
-#     if session["role"] == "teacher":
-#         session["recipe"] = recipe
-#         #Clients get the unshuffled (actual) recipe. It is upto the client to shuffle it.
-#         emit('new recipe added', {'data': recipe}, broadcast=True)
-
-# @socketio.on('on_correct_ordering')
-# def on_correct_ordering():
-#     if session["role"] == "student":
-#         # When teacher gets this message the client has to prompt the teacher to create a new recipe
-#         emit('student has correctly ordered the recipe!', {'data' : True}, broadcast=True)
 
 if __name__ == '__main__':
     app.run()
