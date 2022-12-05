@@ -7,7 +7,7 @@ Core Features should include:
  - Engage multiple forms of sensory feedback, achieve a high level of accessibility within the task constraints.
  - Cross-platform, open-sourced content
  
-Hosted on [Github](http://k2rlo.pythonanywhere.com/])
+Hosted on [Github](http://k2rlo.pythonanywhere.com/)
 ## Goal
 This project aims to analyze and improve the computational thinking skills of students in K2 and beyond, by creating an application to test these skills using the real world example of cooking recipes. It should serve as a fun, useful metric for teachers to gauge a students ability in this particular task.
 ## Intended learning outcomes (ILOs) for students:
