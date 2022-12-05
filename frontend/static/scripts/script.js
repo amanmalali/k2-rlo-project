@@ -31,7 +31,7 @@ pointCounter = 0;
 // console.log(fetchText());
 
 // var obj;
-// var recipe;
+var recipe;
 
 // fetch('http://127.0.0.1:5000/get_recipe_random')
 //   .then(res => res.json())
@@ -40,19 +40,33 @@ pointCounter = 0;
 //    })
 //   .then(() => {recipe=obj.recipe;
 //    });
-var recipe;
-async function getJSON() {
-    return await fetch('http://127.0.0.1:5000/get_recipe_random')
-        .then((response)=>response.json())
-        .then((responseJson)=>{return responseJson});
+async function getRandomRecipe() {
+    const response = await fetch('http://127.0.0.1:5000/get_recipe_random');
+    const responseJSON = await response.json();
+    recipe = responseJSON.recipe;
+    return recipe;
 }
 
-async function caller() {
-    const k = await this.getJSON();  // command waits until completion
-    recipe=k.recipe         // hello is now available
+async function getRecipes() {
+    const response = await fetch('http://127.0.0.1:5000/list_recipes');
+    const recipesJSON = await response.json();
+    recipe = recipesJSON.recipes;
+    return recipe;
 }
 
-caller()
+async function getRecipeData(recipeName) {
+    const response = await fetch(`http://127.0.0.1:5000/get_recipe_name?name=${recipeName}`);
+    const responseJSON = await response.json();
+    recipe = responseJSON.recipe
+    return recipe;
+}
+
+// async function caller() {
+//     const k = await this.getJSON();  // command waits until completion
+//     recipe = k.recipe         // hello is now available
+// }
+
+// caller()
 // console.log(rec)
 // const recipe = [
 //     'Get Eggs and Olive oil',
@@ -81,13 +95,13 @@ const listItems = [];
 
 let dragStartIndex;
 
-function createList() {
-    console.log(recipe);
+function createList(recipe) {
     [...recipe]
         .map(a => ({ value: a, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
         .map(a => a.value)
         .forEach((recipeName, index) => {
+            console.log(recipeName);
             const listItem = document.createElement("li");
             listItem.setAttribute('data-index', index);
             // listItem.setAttribute('data-order', order['Get Eggs and Olive oil']);
@@ -207,16 +221,59 @@ function resetCounter() {
     $("#point-counter").text(pointCounter);
 }
 
-createList();
+function recipeSubmitHandler() {
+    let selectEl = document.getElementById('recipe-chooser-select');
+    let selectedValue = selectEl.options[selectEl.selectedIndex].text;
+    getRecipeData(selectedValue).then((recipeData) => {
+        document.getElementById("recipe-chooser").style.display = 'none';
+        document.getElementById("game-front-container").style.display = '';
+        createList(recipeData);
+    })
+}
+
+function randomRecipeHandler() {
+    getRandomRecipe().then((recipeData) => {
+        document.getElementById("recipe-chooser").style.display = 'none';
+        document.getElementById("game-front-container").style.display = '';
+        createList(recipeData);
+    })
+}
+
+
+getRecipes().then((recipesArr) => {
+    console.log(recipesArr);
+    let selectEl = document.getElementById('recipe-chooser-select');
+    let submitBtn = document.getElementById('recipeSubmitBtn');
+    let recipeCheck = document.getElementById("recipeCheck");
+    for (let i = 0; i < recipesArr.length; i++) {
+        var opt = recipesArr[i];
+        var el = document.createElement("option");
+        el.value = opt;
+        el.textContent = opt;
+        selectEl.appendChild(el);
+    }
+    submitBtn.addEventListener('click', recipeSubmitHandler);
+    randomRecipeBtn.addEventListener('click', randomRecipeHandler);
+    recipeCheck.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+            document.getElementById("check").style.display = '';
+        } else {
+            document.getElementById("check").style.display = 'none';
+        }
+    })
+});
+
+
+// createList();
 
 check.addEventListener('click', checkOrder);
 
 if (document.contains(ranked_elem)) {
     ranked_button.addEventListener('click', resetCounter);
 };
-sndFail.addEventListener('ended', function() {
+sndFail.addEventListener('ended', function () {
     this.currentTime = 0;
 });
-sndSucc.addEventListener('ended', function() {
+sndSucc.addEventListener('ended', function () {
     this.currentTime = 0;
 });
