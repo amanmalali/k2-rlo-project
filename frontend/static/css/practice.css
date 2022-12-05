@@ -18,6 +18,7 @@
     font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 16px;
 }
 
 .check-btn:active {
@@ -36,7 +37,19 @@
     border-style: groove;
     background-color: var(--game-background-color);
     padding: 2%;
-    margin-top: 25%;
+}
+
+#recipe-chooser {
+    border-radius: 10%;
+    border-style: groove;
+    background-color: var(--game-background-color);
+    padding: 2%;
+}
+
+#random-recipe-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
 }
 
 #point-counter-box {
