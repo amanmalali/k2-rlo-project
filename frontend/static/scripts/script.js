@@ -20,34 +20,69 @@ if (document.contains(ranked_elem)) {
 };
 pointCounter = 0;
 
-const recipe = [
-    'Get Eggs and Olive oil',
-    'Scramble the eggs in the bowl',
-    'Heat a pan on medium heat',
-    'Wait until pan is hot',
-    'Pour two big spoons of Olive oil into the pan',
-    'Pour scrambled eggs and stir until dry and cooked',
-    'Get Eggs and Olive oil',
-    'Scramble the eggs in the bowl',
-    'Heat a pan on medium heat',
-    'Wait until pan is hot',
-    'Pour two big spoons of Olive oil into the pan',
-    'Pour scrambled eggs and stir until dry and cooked'
-];
 
-const order = {
-    'Get Eggs and Olive oil':1,
-    'Scramble the eggs in the bowl':2,
-    'Heat a pan on medium heat':2,
-    'Wait until pan is hot':3,
-    'Pour two big spoons of Olive oil into the pan':4,
-    'Pour scrambled eggs and stir until dry and cooked':5
-};
+
+// async function fetchText() {
+//     let response = await fetch('http://127.0.0.1:5000/get_recipe_random');
+//     let data = await response.json();
+//     return data
+// }
+
+// console.log(fetchText());
+
+// var obj;
+// var recipe;
+
+// fetch('http://127.0.0.1:5000/get_recipe_random')
+//   .then(res => res.json())
+//   .then(data => {
+//     obj = data;
+//    })
+//   .then(() => {recipe=obj.recipe;
+//    });
+var recipe;
+async function getJSON() {
+    return await fetch('http://127.0.0.1:5000/get_recipe_random')
+        .then((response)=>response.json())
+        .then((responseJson)=>{return responseJson});
+}
+
+async function caller() {
+    const k = await this.getJSON();  // command waits until completion
+    recipe=k.recipe         // hello is now available
+}
+
+caller()
+// console.log(rec)
+// const recipe = [
+//     'Get Eggs and Olive oil',
+//     'Scramble the eggs in the bowl',
+//     'Heat a pan on medium heat',
+//     'Wait until pan is hot',
+//     'Pour two big spoons of Olive oil into the pan',
+//     'Pour scrambled eggs and stir until dry and cooked',
+//     'Get Eggs and Olive oil',
+//     'Scramble the eggs in the bowl',
+//     'Heat a pan on medium heat',
+//     'Wait until pan is hot',
+//     'Pour two big spoons of Olive oil into the pan',
+//     'Pour scrambled eggs and stir until dry and cooked'
+// ];
+
+// const order = {
+//     'Get Eggs and Olive oil':1,
+//     'Scramble the eggs in the bowl':2,
+//     'Heat a pan on medium heat':2,
+//     'Wait until pan is hot':3,
+//     'Pour two big spoons of Olive oil into the pan':4,
+//     'Pour scrambled eggs and stir until dry and cooked':5
+// };
 const listItems = [];
 
 let dragStartIndex;
 
 function createList() {
+    console.log(recipe);
     [...recipe]
         .map(a => ({ value: a, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
@@ -55,7 +90,7 @@ function createList() {
         .forEach((recipeName, index) => {
             const listItem = document.createElement("li");
             listItem.setAttribute('data-index', index);
-            listItem.setAttribute('data-order', order['Get Eggs and Olive oil']);
+            // listItem.setAttribute('data-order', order['Get Eggs and Olive oil']);
             // Slight front end bug if you use a number with the scholar font
             listItem.innerHTML = `
             <span style="font-family: 'Upheaval';" class='number'>${index + 1}</span>
@@ -63,7 +98,6 @@ function createList() {
                 <p style="font-family: 'Scholar';" class='recipe-name'>${recipeName}</p>
                 <i class="fas fa-grip-lines"></i>
             </div>`;
-            listItems.push(listItem);
             listItems.push(listItem);
 
             draggableList.appendChild(listItem);

@@ -11,6 +11,7 @@
     <title>Recigems</title>
     <link rel="stylesheet" type="text/css" href="../static/css/practice.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body class="backdrop-rotator">
@@ -21,19 +22,16 @@
         </div>
         <div id = "mainLinks">
             <ul id="menu">
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="./ranked.html">Speed Rounds</a></li>
-                <li><a class="active" href="./index.html">Practice</a></li>
-                <li><a href="./board.html">Leader Boards</a></li>
-                <li><a href="./settings">Settings</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/input">Add Recipes</a></li>
             </ul>
         </div>
     </nav>
     <!-- <div style="padding-top: 5%;"></div> -->
-    <div style="padding: 10px;" id="point-counter-box">    
+    <!-- <div style="padding: 10px;" id="point-counter-box">    
         <img id="gemPicture" src="../static/images/gems/blue_gem_1.png">
         <p id="point-counter">0</p>  
-    </div>
+    </div> -->
     <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; overflow: auto;">
         <div id = "game-front-container">
             <div id = "practice-prompt-container">   
