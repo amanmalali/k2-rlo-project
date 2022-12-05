@@ -6,6 +6,8 @@ Core Features should include:
  - The ability for teachers and students to input cultural cuisine/recipes
  - Engage multiple forms of sensory feedback, achieve a high level of accessibility within the task constraints.
  - Cross-platform, open-sourced content
+ 
+Hosted on (Github)[http://k2rlo.pythonanywhere.com/]
 ## Goal
 This project aims to analyze and improve the computational thinking skills of students in K2 and beyond, by creating an application to test these skills using the real world example of cooking recipes. It should serve as a fun, useful metric for teachers to gauge a students ability in this particular task.
 ## Intended learning outcomes (ILOs) for students:
@@ -31,15 +33,15 @@ Students should be able to analyze real world examples and break them down into 
      * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template): Stores web links
 ## Features
  * Core Game Mechanic
- * User login
  * Recipe and background image storage
  * Changing background
- * Audio system
- * Demo and tutorial
  * (Deprecated) Colored text feedback
+ * (Deprecated) Audio system
  * (Deprecated) Scoring system
  * (Deprecated) Ranked game-mode
 ## Future Work
+ * Demo and tutorial
+ * User login
  * Adding a grocery system to gather ingredients for a recipe
  * Passively montoring student metrics for teacher assessment
  * Creating student analytics for teachers (mean, mode, std of points, time spent on a problem, etc...)
