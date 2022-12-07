@@ -109,7 +109,7 @@ function createList(recipe) {
             listItem.innerHTML = `
             <span style="font-family: 'Upheaval';" class='number'>${index + 1}</span>
             <div class='draggable' draggable='true'>
-                <p style="font-family: 'Scholar';" class='recipe-name'>${recipeName}</p>
+                <p class='recipe-name'>${recipeName}</p>
                 <i class="fas fa-grip-lines"></i>
             </div>`;
             listItems.push(listItem);
