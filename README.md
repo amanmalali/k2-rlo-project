@@ -10,6 +10,29 @@ Core Features should include:
 Hosted on [Github](http://k2rlo.pythonanywhere.com/)
 ## Goal
 This project aims to analyze and improve the computational thinking skills of students in K2 and beyond, by creating an application to test these skills using the real world example of cooking recipes. It should serve as a fun, useful metric for teachers to gauge a students ability in this particular task.
+
+## Requirements
+* Flask
+* Requests
+* json
+
+## Running locally
+* Install the required python packages
+* Run app.py
+* The application will now run on http://127.0.0.1:5000/
+
+## Running on PythonAnywhere
+* Create a Python Anywhere account, or contact collaborators for access to the current account
+* Create a Bash session and clone this repository
+* Move files to /mysite/ directory
+* Edit wsgi file to specify the main flask file, app.py in this case.
+* Reload the website
+
+## Routes
+* / : This is the home page, renders home.html. Let's students pick recipes or play a random recipe.
+* /index : This is the main game page, renders index.html. Implements the drag and drop features and also the check functions.
+* /input : This page lets instructors add new recipes.
+
 ## Intended learning outcomes (ILOs) for students:
 Students should be able to analyze real world examples and break them down into their constituent steps. They should also be able to apply algorithmic skills to further order these steps sequentially, similar to how they would perform them in the real world.
 ## Intended Workflow
@@ -23,7 +46,7 @@ Students should be able to analyze real world examples and break them down into 
      * Teacher: Ends activity, allows brainstorming of new recipes and images
      * Student: Participate in brainstorming
 ## Structure
- * [flask_session](https://github.com/amanmalali/k2-rlo-project/tree/main/flask_session)
+ * [flask_app](https://github.com/amanmalali/k2-rlo-project/tree/main/app.py)
  * [frontend](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend)
      * [static](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static): Stores functions/data not subject to change
          * [css](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/static/css): Stores CSS Template
@@ -33,6 +56,7 @@ Students should be able to analyze real world examples and break them down into 
      * [template](https://github.com/amanmalali/k2-rlo-project/tree/main/frontend/template): Stores web links
 ## Features
  * Core Game Mechanic
+ * Drag and drop recipe items
  * Recipe and background image storage
  * Changing background
  * (Deprecated) Colored text feedback
